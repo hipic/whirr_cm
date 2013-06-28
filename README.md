@@ -56,12 +56,18 @@ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa_whirr
 
 ```bash
 curl -O https://raw.github.com/hipic/whirr-cm/master/cm-ec2-hipic.properties
+curl -O https://raw.github.com/hipic/whirr-cm/master/setupWhirrCM.sh    
+curl -O https://raw.github.com/hipic/whirr-cm/master/startWhirrCM.sh
+curl -O https://raw.github.com/hipic/whirr-cm/master/stopWhirrCM.sh
 ```
-
-The following command will start a cluster with 7 nodes, 1 CM server, 3 master and 3 slave nodes. To change the cluster topology, edit the cm-ec2.properties file.
-
-whirr launch-cluster --config cm-ec2-hipic.properties
-
+You need to set up your environement first
+```bash
+source ./setupWhirrCM.sh
+```
+The following command will start a cluster with 7 nodes, 1 CM server, 3 master and 3 slave nodes. To change the cluster topology, edit the cm-ec2-hipic.properties file.
+```bash
+source ./startWhirrCM.sh
+```
 Whirr will report progress to the console as it runs and will exit once complete.
 
 During the various phases of execution, the Whirr CM plugin will report the CM Web Console URL, eg pre-provision
@@ -126,5 +132,9 @@ configure-cm-agent_cm-cdh-jobtracker_cm-cdh-hivemetastore_cm-cdh-hiveserver2_cm-
 ```
 ## Others: you may refer to cloudera's whirr-cm [1] to manage, use, shutdown, test the CDH cluster with CM
 
+For example, to stop the servers
+```bash
+source ./stopWhirrCM.sh
+```
 ## Reference 
 [1]. https://github.com/cloudera/whirr-cm
