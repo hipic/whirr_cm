@@ -34,7 +34,10 @@ make prefix=/usr/local all
 make prefix=/usr/local install
 
 
-3. update cm-ec2.properties, for example, like cm-ec2.properties
+3. Download cm-ec2-hipic.properties:
+
+curl -O https://raw.github.com/hipic/whirr-cm/master/cm-ec2-hipic.properties
+
 4. 
 
 Reference 1. https://github.com/cloudera/whirr-cm
