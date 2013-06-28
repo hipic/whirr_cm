@@ -70,19 +70,22 @@ Whirr Handler -----------------------------------------------------------------
 Whirr Handler [CMClusterProvision] 
 Whirr Handler -----------------------------------------------------------------
 Whirr Handler 
-Whirr Handler [CMClusterProvision] follow live at http://37.188.114.234:7180
+Whirr Handler [CMClusterProvision] follow live at http://ec2-50-16-12-129.compute-1.amazonaws.com:7180
 ```
 and post-provision:
 
 ```bash
 Whirr Handler [CMClusterProvision] CM AGENTS
-Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /root/.ssh/whirr whirr@37.188.114.209
-Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /root/.ssh/whirr whirr@37.188.114.210
-Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /root/.ssh/whirr whirr@37.188.114.225
-Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /root/.ssh/whirr whirr@37.188.114.234
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@23.22.38.202
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@23.23.48.115
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@50.16.12.129
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@50.16.36.169
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@54.226.54.19
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@54.226.90.179
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@54.227.35.91
 Whirr Handler [CMClusterProvision] CM SERVER
-Whirr Handler [CMClusterProvision]   http://ec2-54-216-175-183.eu-west-1.compute.amazonaws.com:7180
-Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /root/.ssh/whirr whirr@37.188.114.234
+Whirr Handler [CMClusterProvision]   http://ec2-50-16-12-129.compute-1.amazonaws.com:7180
+Whirr Handler [CMClusterProvision]   ssh -o StrictHostKeyChecking=no -i /home/dalgual/.ssh/id_rsa_whirr whirr@50.16.12.129
 ```
 You are able to log into the CM Web Console (or hosts) at any stage and observe proceedings, via the async, real time UI.
 
