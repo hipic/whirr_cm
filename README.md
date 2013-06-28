@@ -48,7 +48,7 @@ export PATH=$WHIRR_HOME/bin:$PATH
 ## Create a password-less SSH keypair for Whirr to use:
 
 ```bash
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa_cm
+ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa_whirr
 ```
 
 ## Download cm-ec2-hipic.properties and place it to your current location
@@ -90,6 +90,36 @@ The default admin user credentials are:
 ```bash
 Username: admin 
 Password: admin 
+```
+And, you can ssh to remotely open a client node
+```bash
+[cm-agent+cm-cdh-jobtracker+cm-cdh-hivemetastore+cm-cdh-hiveserver2+cm-cdh-hcatalog+cm-cdh-impala-statestore+cm-cdh-hue-server+cm-cdh-hue-beeswaxserver+cm-cdh-sqoop-server+cm-cdh-zookeeper]: ssh -i /home/dalgual/.ssh/id_rsa_whirr -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no whirr@54.227.35.91
+To destroy cluster, run 'whirr destroy-cluster' with the same options used to launch it.
+[dalgual@Linux-26-64bit whirr]$  ssh -i /home/dalgual/.ssh/id_rsa_whirr -o "UserKnownHostsFile /dev/null" -o StrictHostKeyChecking=no whirr@54.227.35.91
+Warning: Permanently added '54.227.35.91' (RSA) to the list of known hosts.
+Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Fri Jun 28 05:32:11 UTC 2013
+
+  System load:  0.01              Processes:           80
+  Usage of /:   28.2% of 7.87GB   Users logged in:     0
+  Memory usage: 38%               IP address for eth0: 10.38.178.63
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+  Use Juju to deploy your cloud instances and workloads:
+    https://juju.ubuntu.com/#cloud-precise
+
+Last login: Fri Jun 28 03:24:25 2013 from 121.138.74.134
+whirr@ip-10-38-178-63:~$ ls
+configure-cm-agent_cm-cdh-jobtracker_cm-cdh-hivemetastore_cm-cdh-hiveserver2_cm-cdh-hcatalog_cm-cdh-impala-statestore_cm-cdh-hue-server_cm-cdh-hue-beeswaxserver_cm-cdh-sqoop-server_cm-cdh-zookeeper
+w
 ```
 ## 
 
