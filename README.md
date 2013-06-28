@@ -4,7 +4,7 @@ whirr_cm
 Cloudera Manager by Whirr
 
 Cloudera Manager can be launched using whirr as illustrated in whirr-cm [1]. However, it does not work for me so that I update whirr-cm [1] to make it more in detail.
-The following is tested at CentOS 5.9. You may test your CentOS using 'cat /etc/redhat-release'
+The following is tested at CentOS 5.9 (64bits). You may test your CentOS using 'cat /etc/redhat-release'
 
 1. install Maven if 'which mvn' does not show any 'maven'
 
