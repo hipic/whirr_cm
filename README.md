@@ -1,7 +1,8 @@
 # Cloudera Manager by Whirr
 ========
 
-Cloudera Manager can be launched using whirr as illustrated in whirr-cm [1]. However, it does not work for me so that I update whirr-cm [1] to make it more in detail.
+Cloudera Manager can be launched using whirr as illustrated in whirr-cm [1]. However, it is a little bit ambiguous to me - actually it did not work for me - so that I update whirr-cm [1] to make it more in detail.
+
 The following is tested at CentOS 5.9 (64bits). You may test your CentOS using 'cat /etc/redhat-release'
 
 ## install Maven if 'which mvn' does not show any 'maven'
@@ -122,9 +123,8 @@ Welcome to Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
 Last login: Fri Jun 28 03:24:25 2013 from 121.138.74.134
 whirr@ip-10-38-178-63:~$ ls
 configure-cm-agent_cm-cdh-jobtracker_cm-cdh-hivemetastore_cm-cdh-hiveserver2_cm-cdh-hcatalog_cm-cdh-impala-statestore_cm-cdh-hue-server_cm-cdh-hue-beeswaxserver_cm-cdh-sqoop-server_cm-cdh-zookeeper
-w
 ```
-## 
+## Others: you may refer to cloudera's whirr-cm [1] to manage, use, shutdown, test the CDH cluster with CM
 
 ## Reference 
 [1]. https://github.com/cloudera/whirr-cm
