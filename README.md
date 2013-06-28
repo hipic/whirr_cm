@@ -6,7 +6,8 @@ The following is tested at CentOS 5.9 (64bits). You may test your CentOS using '
 
 ## install Maven if 'which mvn' does not show any 'maven'
 
-```wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+```bash
+wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
 
 sudo tar xzf apache-maven-3.0.5-bin.tar.gz -C /usr/local
 
@@ -18,7 +19,8 @@ sudo ln -s apache-maven-3.0.5 maven
 
 ## Install git if 'which git' does not show any 'git'
 
-```yum groupinstall 'Development Tools'
+```bash
+yum groupinstall 'Development Tools'
 
 yum install gettext-devel expat-devel curl-devel zlib-devel openssl-devel
 
@@ -35,7 +37,8 @@ make prefix=/usr/local install
 
 ## Download cm-ec2-hipic.properties:
 
-```curl -O https://raw.github.com/hipic/whirr-cm/master/cm-ec2-hipic.properties
+```bash
+curl -O https://raw.github.com/hipic/whirr-cm/master/cm-ec2-hipic.properties
 ```
 
 ## 
