@@ -55,10 +55,10 @@ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa_whirr
 ## Download cm-ec2-hipic.properties and place it to your current location
 
 ```bash
-curl -O https://raw.github.com/hipic/whirr-cm/master/cm-ec2-hipic.properties
-curl -O https://raw.github.com/hipic/whirr-cm/master/setupWhirrCM.sh    
-curl -O https://raw.github.com/hipic/whirr-cm/master/startWhirrCM.sh
-curl -O https://raw.github.com/hipic/whirr-cm/master/stopWhirrCM.sh
+curl -O https://raw.github.com/hipic/whirr_cm/master/cm-ec2-hipic.properties
+curl -O https://raw.github.com/hipic/whirr_cm/master/setupWhirrCM.sh    
+curl -O https://raw.github.com/hipic/whirr_cm/master/startWhirrCM.sh
+curl -O https://raw.github.com/hipic/whirr_cm/master/stopWhirrCM.sh
 ```
 You need to set up your environement first
 ```bash
