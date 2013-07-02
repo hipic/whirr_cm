@@ -136,5 +136,37 @@ For example, to stop the servers
 ```bash
 source ./stopWhirrCM.sh
 ```
+
+## Trouble Shooting
+
+If hadoop points at file:/// not hdfs:///, ‘ssh’ to the client node that is the last ssh of whirr. Then, I need to update Hadoop’s core-site.xml by adding its namenode, which is at /etc/hadoop/conf
+
+```bash
+<configuration>
+
+<property>
+ <name>fs.defaultFS</name>
+ <value>hdfs://hadoop-namenode:8020</value>
+</property>
+
+<configuration>
+```
+
+For example, if a name node’s local ip address is 10.80.221.129
+
+```bash
+<configuration>
+
+<property>
+ <name>fs.defaultFS</name>
+ <value>hdfs://10.80.221.129:8020</value>
+</property>
+
+<configuration>
+```
+
+Now you can see the HDFS directories and files. If you ssh to other nodes, you have to change other nodes’ core-site.xml too.
 ## Reference 
-[1]. https://github.com/cloudera/whirr-cm
+### https://github.com/cloudera/whirr-cm
+### http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
+### http://stackoverflow.com/questions/16008486/after-installing-hadoop-via-cloudera-manager-4-5-hdfs-only-points-to-the-local-f
