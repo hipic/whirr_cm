@@ -137,6 +137,8 @@ For example, to stop the servers
 source ./stopWhirrCM.sh
 ```
 
+And, Hadoop and ecosystems' conf files reside at /etc/hadoop/conf, /etc/solr/conf, /etc/zookeeper/conf etc.
+
 ## Trouble Shooting
 
 If hadoop points at file:/// not hdfs:///, ‘ssh’ to the client node that is the last ssh of whirr. Then, I need to update Hadoop’s core-site.xml by adding its namenode, which is at /etc/hadoop/conf
