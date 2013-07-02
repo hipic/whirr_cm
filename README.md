@@ -167,6 +167,6 @@ For example, if a name node’s local ip address is 10.80.221.129
 
 Now you can see the HDFS directories and files. If you ssh to other nodes, you have to change other nodes’ core-site.xml too.
 ## Reference 
-### https://github.com/cloudera/whirr-cm
-### http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
-### http://stackoverflow.com/questions/16008486/after-installing-hadoop-via-cloudera-manager-4-5-hdfs-only-points-to-the-local-f
+#### [1]. https://github.com/cloudera/whirr-cm
+#### [2]. http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
+#### [3]. http://stackoverflow.com/questions/16008486/after-installing-hadoop-via-cloudera-manager-4-5-hdfs-only-points-to-the-local-f
