@@ -139,7 +139,7 @@ source ./stopWhirrCM.sh
 
 And, Hadoop and ecosystems' conf files reside at /etc/hadoop/conf, /etc/solr/conf, /etc/zookeeper/conf etc.
 
-## Trouble Shooting
+## Trouble Shooting at HDFS
 
 If hadoop points at file:/// not hdfs:///, ‘ssh’ to the client node that is the last ssh of whirr. Then, I need to update Hadoop’s core-site.xml by adding its namenode, which is at /etc/hadoop/conf
 
@@ -168,6 +168,27 @@ For example, if a name node’s local ip address is 10.80.221.129
 ```
 
 Now you can see the HDFS directories and files. If you ssh to other nodes, you have to change other nodes’ core-site.xml too.
+
+## Trouble Shooting at Hive
+When you run hive command at hive console, you may see Hive errors which is mostly because you don't have a right to write a file and directory such as
+
+```bash
+ERROR XBM0H: Directory /var/lib/hive/metastore/metastore_db cannot be created.
+```
+
+Then, you have to go to and update the database name directory of /etc/hive/conf/hive-site.xml as follows:
+
+```bash
+<!-- Hive Execution Parameters -->
+
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:derby:;databaseName=/home/users/whirr/hive/metastore/metastore_db;create=true</value>
+  <description>JDBC connect string for a JDBC metastore</description>
+</property>
+```
+The default directory was 'databaseName=/var/lib/hive/metastore/metastore_db'
+
 ## Reference 
 #### [1]. https://github.com/cloudera/whirr-cm
 #### [2]. http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
