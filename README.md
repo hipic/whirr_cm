@@ -174,7 +174,7 @@ You may also see the following error:
 whirr@ip-10-144-65-6:~$ hadoop fs -put foo.txt test/ 
 put: org.apache.hadoop.security.AccessControlException: Permission denied: user=root, access=WRITE, inode="":whirr:supergroup:rwxr-xr-x
 ```
-Then, at Cloudera Manager's WebUI such as http://ec2-50-17-19-140.compute-1.amazonaws.com:7180, Go to services> whirr_hdfs_1 > service wide
+Then, at Cloudera Manager's WebUI such as http://ec2-50-16-12-129.compute-1.amazonaws.com:7180, Go to services> whirr_hdfs_1 > service wide
 
 Then, unmark 'Check HDFS permissions' to make whirr users can allow update the HDFS directories. 
 
