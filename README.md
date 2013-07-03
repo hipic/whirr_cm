@@ -169,6 +169,17 @@ For example, if a name node’s local ip address is 10.80.221.129
 
 Now you can see the HDFS directories and files. If you ssh to other nodes, you have to change other nodes’ core-site.xml too.
 
+You may also see the following error:
+```bash
+whirr@ip-10-144-65-6:~$ hadoop fs -put foo.txt test/ 
+put: org.apache.hadoop.security.AccessControlException: Permission denied: user=root, access=WRITE, inode="":whirr:supergroup:rwxr-xr-x
+```
+Then, at Cloudera Manager's WebUI such as http://ec2-50-17-19-140.compute-1.amazonaws.com:7180, Go to services> whirr_hdfs_1 > service wide
+
+Then, unmark 'Check HDFS permissions' to make whirr users can allow update the HDFS directories. 
+
+Note: the cluster becomes 'Bad Health' status after then. 
+
 ## Trouble Shooting at Hive
 When you run hive command at hive console, you may see Hive errors which is mostly because you don't have a right to write a file and directory such as
 
