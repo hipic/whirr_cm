@@ -241,3 +241,4 @@ The default directory was 'databaseName=/var/lib/hive/metastore/metastore_db'
 #### [1]. https://github.com/cloudera/whirr-cm
 #### [2]. http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
 #### [3]. http://stackoverflow.com/questions/16008486/after-installing-hadoop-via-cloudera-manager-4-5-hdfs-only-points-to-the-local-f
+#### [4]. https://groups.google.com/a/cloudera.org/forum/#!topic/scm-users/JIk3vz6k1ek
