@@ -176,7 +176,7 @@ put: org.apache.hadoop.security.AccessControlException: Permission denied: user=
 ```
 At a jobtracker master node, do the following steps for the user 'whirr':
 ```bash
-$ sudo -u hdfs hadoop fs -mkdir /user/ec2-user
+$ sudo -u hdfs hadoop fs -mkdir /user/whirr
 ```
 If there is no way to start 'sudo' for the user, do the following first
 ```bash
