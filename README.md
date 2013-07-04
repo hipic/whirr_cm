@@ -178,7 +178,44 @@ Then, at Cloudera Manager's WebUI such as http://ec2-50-16-12-129.compute-1.amaz
 
 Then, unmark 'Check HDFS permissions' to make whirr users can allow update the HDFS directories. 
 
-Note: the cluster becomes 'Bad Health' status after then. 
+At a jobtracker master node, do the following steps
+```bash
+$ sudo su
+$ sudo -u hdfs hadoop fs -mkdir root
+$ hadoop fs -ls /user
+Found 4 items
+drwxr-xr-x   - hdfs   supergroup          0 2013-07-04 05:14 /user/hdfs
+drwxrwxr-t   - hive   hive                0 2013-07-04 04:50 /user/hive
+drwxrwxr-x   - oozie  oozie               0 2013-07-04 04:53 /user/oozie
+drwxrwxr-x   - sqoop2 sqoop               0 2013-07-04 04:54 /user/sqoop2
+$ hadoop fs -ls /user/hdfs
+Found 1 items
+drwxr-xr-x   - hdfs supergroup          0 2013-07-04 05:14 /user/hdfs/root
+$ sudo -u hdfs hadoop fs -chown root:root /user
+$ hadoop fs -mkdir test
+$ hadoop fs -ls /
+Found 3 items
+drwxr-xr-x   - hbase hbase               0 2013-07-04 04:49 /hbase
+drwxrwxrwt   - hdfs  supergroup          0 2013-07-04 04:58 /tmp
+drwxr-xr-x   - root  root                0 2013-07-04 05:15 /user
+$ hadoop fs -ls /user/
+Found 5 items
+drwxr-xr-x   - hdfs   supergroup          0 2013-07-04 05:14 /user/hdfs
+drwxrwxr-t   - hive   hive                0 2013-07-04 04:50 /user/hive
+drwxrwxr-x   - oozie  oozie               0 2013-07-04 04:53 /user/oozie
+drwxr-xr-x   - root   root                0 2013-07-04 05:15 /user/root
+drwxrwxr-x   - sqoop2 sqoop               0 2013-07-04 04:54 /user/sqoop2
+$ hadoop fs -ls /user/root
+Found 1 items
+drwxr-xr-x   - root root          0 2013-07-04 05:15 /user/root/test
+$ vi test.txt
+$ hadoop fs -put test.txt test/
+$ hadoop fs -cat test.txt
+cat: `test.txt': No such file or directory
+$ hadoop fs -cat test/test.txt
+hello world
+HELLO WORLD
+```
 
 ## Trouble Shooting at Hive
 When you run hive command at hive console, you may see Hive errors which is mostly because you don't have a right to write a file and directory such as
