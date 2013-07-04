@@ -174,11 +174,28 @@ You may also see the following error:
 whirr@ip-10-144-65-6:~$ hadoop fs -put foo.txt test/ 
 put: org.apache.hadoop.security.AccessControlException: Permission denied: user=root, access=WRITE, inode="":whirr:supergroup:rwxr-xr-x
 ```
-Then, at Cloudera Manager's WebUI such as http://ec2-50-16-12-129.compute-1.amazonaws.com:7180, Go to services> whirr_hdfs_1 > service wide
+At a jobtracker master node, do the following steps for the user 'whirr':
+```bash
+$ sudo -u hdfs hadoop fs -mkdir /user/ec2-user
+```
+If there is no way to start 'sudo' for the user, do the following first
+```bash
+$ sudo su
+```
+```bash
+$ sudo -u hdfs hadoop fs -chown whirr:whirr /user/whirr
+$ hadoop fs -ls /user/
+Found 6 items
+drwxr-xr-x   - whirr whirr            0 2013-07-04 05:30 /user/whirr
+drwxr-xr-x   - hdfs     supergroup          0 2013-07-04 05:14 /user/hdfs
+drwxrwxr-t   - hive     hive                0 2013-07-04 04:50 /user/hive
+drwxrwxr-x   - oozie    oozie               0 2013-07-04 04:53 /user/oozie
+drwxr-xr-x   - root     root                0 2013-07-04 05:15 /user/root
+drwxrwxr-x   - sqoop2   sqoop               0 2013-07-04 04:54 /user/sqoop2
 
-Then, unmark 'Check HDFS permissions' to make whirr users can allow update the HDFS directories. 
+```
 
-At a jobtracker master node, do the following steps
+For the user root, do the following:
 ```bash
 $ sudo su
 $ sudo -u hdfs hadoop fs -mkdir root
