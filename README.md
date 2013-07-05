@@ -10,8 +10,10 @@ $ wget http://archive.cloudera.com/cm4/installer/latest/cloudera-manager-install
 $ chmod +x cloudera-manager-installer.bin
 $ sudo ./cloudera-manager-installer.bin
 ```
+#### (1) Follow the command based installation accepting licenses.
+#### (2) Open and go to Cloudera Manager's Web UI, which might be local URLbut you may use the global URL, to launch the services.
+#### (3) All Services > Add Cluster > Continue on Coudera Manager Express Wizard > CentOS 6.3; m1.xlarge; ...
 
-And, go to Cloudera Manager's Web UI to launch the services.
 
 ## Install all using Whirr
 
