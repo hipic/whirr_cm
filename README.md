@@ -3,13 +3,17 @@
 
 Cloudera Manager can be launched using whirr as illustrated in whirr-cm [1]. However, it is a little bit ambiguous to me - actually it did not work for me - so that I update whirr-cm [1] to make it more in detail.
 
-## Install Cloudera Manager from a AWS instance
-Download the Cloudera Manager 4.5 installer and execute it on the remote instance:
+### Install Cloudera Manager from an AWS instance
+You can launch an AWS instance at CentOS 6.3 and ssh to the instance. Then, download the Cloudera Manager 4.5 installer and execute it on the remote instance:
 ```bash
 $ wget http://archive.cloudera.com/cm4/installer/latest/cloudera-manager-installer.bin
 $ chmod +x cloudera-manager-installer.bin
 $ sudo ./cloudera-manager-installer.bin
 ```
+
+And, go to Cloudera Manager's Web UI to launch the services.
+
+## Install all using Whirr
 
 The following is tested at CentOS 5.9 (64bits). You may test your CentOS using 'cat /etc/redhat-release'
 
