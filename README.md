@@ -3,6 +3,14 @@
 
 Cloudera Manager can be launched using whirr as illustrated in whirr-cm [1]. However, it is a little bit ambiguous to me - actually it did not work for me - so that I update whirr-cm [1] to make it more in detail.
 
+## Install Cloudera Manager from a AWS instance
+Download the Cloudera Manager 4.5 installer and execute it on the remote instance:
+```bash
+$ wget http://archive.cloudera.com/cm4/installer/latest/cloudera-manager-installer.bin
+$ chmod +x cloudera-manager-installer.bin
+$ sudo ./cloudera-manager-installer.bin
+```
+
 The following is tested at CentOS 5.9 (64bits). You may test your CentOS using 'cat /etc/redhat-release'
 
 ## install Maven if 'which mvn' does not show any 'maven'
@@ -259,3 +267,5 @@ The default directory was 'databaseName=/var/lib/hive/metastore/metastore_db'
 #### [2]. http://stackoverflow.com/questions/12391226/hadoop-hdfs-points-to-file-not-hdfs?rq=1
 #### [3]. http://stackoverflow.com/questions/16008486/after-installing-hadoop-via-cloudera-manager-4-5-hdfs-only-points-to-the-local-f
 #### [4]. https://groups.google.com/a/cloudera.org/forum/#!topic/scm-users/JIk3vz6k1ek
+#### [5]. http://blog.cloudera.com/blog/2013/03/how-to-create-a-cdh-cluster-on-amazon-ec2-via-cloudera-manager/
+
